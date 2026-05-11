@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Unsafe Stylesheet Fixture</title>
+    <link rel="stylesheet" href="https://example.com/remote.css">
+    <link rel="stylesheet" href="./missing.css">
+    <link rel="stylesheet" href="./unsafe.html">
+    <style>
+      .long-status-source { color: #24292f; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Unsafe Stylesheet Fixture</h1>
+      <p class="long-status-source">External, missing, and non-CSS stylesheet links should be blocked while visible HTML remains reviewable.</p>
+      <button onclick="window.__commentaryUnsafeStylesheetRan = true">Unsafe event handler</button>
+      <a href="javascript:alert('blocked')">Unsafe link</a>
+      <iframe src="https://example.com/embed"></iframe>
+      <script>window.__commentaryUnsafeStylesheetRan = true;</script>
+    </main>
+  </body>
+</html>
