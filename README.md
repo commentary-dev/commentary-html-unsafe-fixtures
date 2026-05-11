@@ -1,12 +1,16 @@
-# Commentary HTML Unsafe Fixtures
+# Commentary HTML Unsafe Fixture Branch
 
-Baseline branch for public HTML sanitization fixtures.
+This branch verifies static HTML previews block scripts, event handlers, unsafe URLs, and active embeds while recovering visible content from malformed HTML.
 
-This repository is safe for manual testing, demos, and read-only automation under `commentary-dev`. It is not for comment creation or mutating refresh/provider-sync tests.
+Expected Commentary behavior:
 
-The fixture branch covers sandboxed/restricted rendering, blocked scripts, stripped event handlers, unsafe URL removal, active embed blocking, and malformed HTML recovery.
+- scripts are not run by default
+- event handlers and dangerous URLs are removed
+- active embeds are blocked
+- malformed visible content still gets a usable preview or safe fallback
+- safety status copy explains sandboxing/restrictions without implying full browser fidelity
 
-After publishing, use:
+Commentary URLs after publishing:
 
-- PR review: `/review/github/commentary-dev/commentary-html-unsafe-fixtures/pull/1?file=public%2Funsafe.html`
-- Direct document: `/review/github/commentary-dev/commentary-html-unsafe-fixtures/document?branch=fixture%2Funsafe-html&file=public%2Funsafe.html`
+- Unsafe PR review: `/review/github/commentary-dev/commentary-html-unsafe-fixtures/pull/1?file=public%2Funsafe.html`
+- Malformed direct document: `/review/github/commentary-dev/commentary-html-unsafe-fixtures/document?branch=fixture%2Funsafe-html&file=public%2Fmalformed.html`

@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Unsafe HTML Fixture</title>
+  </head>
+  <body>
+    <main>
+      <h1>Unsafe HTML Fixture</h1>
+      <p>Visible content must remain available for review.</p>
+      <button onclick="window.__commentaryUnsafeRan = true">Unsafe button</button>
+      <a href="javascript:alert('blocked')">JavaScript URL</a>
+      <img src="javascript:alert('blocked')" alt="Unsafe image">
+      <iframe src="https://example.com"></iframe>
+      <script>window.__commentaryUnsafeRan = true;</script>
+    </main>
+  </body>
+</html>
